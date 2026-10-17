@@ -525,6 +525,8 @@ Files unique to the later variants:
 
 ### 7.1 Security gotchas (exposed secrets / sensitive data)
 
+- **Status (Red, 2026-10-17):** SimArcade is an old project. The committed Gmail app password was changed long ago, and the committed Edge profile data is not important. Treat the items below as history, not open incidents. Still, never copy credentials into new code; use `.env` as Driftcade does.
+
 - **SECURITY — Gmail app password committed in plain text.**
   - A Gmail app password for the shop's update inbox is stored in `simarcade_appv1/email_monitor.py` (constants `EMAIL_ADDRESS` / `APP_PASSWORD`) and in `simarcade_appv1/email_monitor old.py` (constants `USERNAME` / `APP_PASSWORD`).
   - It was introduced in commit `1f2a08b` and is present in `fed8072`, `563ef23` and `8a076d2`, and therefore in all later trees of main and optimization-v2.
